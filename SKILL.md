@@ -2,9 +2,11 @@
 name: api-docs
 description: >-
   Writes client-facing API docs and Apifox descriptions in 使用方法 / 传参方法 / 注意事项,
-  using existing project terms or 代码标识+待确认, never coined names. Use when updating
-  接口说明, 对接文档, Apifox endpoint/parameter/response descriptions. Do not use for
-  general 去 AI 味 or copy polishing; do not run chinese-ai-humanizer on these docs.
+  using existing project terms or 代码标识+待确认, never coined names. When updating existing
+  接口说明, harvest facts first (especially 必看/注意) and rearrange; do not overwrite with a
+  shorter generic three-block. Use when updating 对接文档, Apifox endpoint/parameter/response
+  descriptions. Do not use for general 去 AI 味 or copy polishing; do not run chinese-ai-humanizer
+  on these docs.
 disable-model-invocation: false
 user-invocable: true
 ---
@@ -30,6 +32,17 @@ user-invocable: true
 有 **业务术语** 时强制 **中英对照**：保存签名(`saveSignatures`)、客户签名(`customer_signature_url`)。相关接口同样成对写。禁止只丢英文名，也禁止为了成对而造中文。
 
 写作中发现新概念：标 **待确认**。不要一边写说明一边往 glossary 里塞。
+
+## 改已有说明
+
+有 **原文** 时必须先通读，再 **收事实再重排**。禁止 **覆盖式缩写**。
+
+1. 扫 **加权标记**：必看、注意、小心、建议、前端必看。按 **原文质量** 处理：表达清晰、易读的保留句式（如何判断可以关闭：`can_disable=1` 且 `is_disabled=0`）；含糊、挤句、过程句的优化写法，判断口径不能丢。排进注意事项最前。不要收成一句笼统用途。
+2. 再收：字段含义、禁止旧字段、相关接口、**参数对应**。
+3. 排进三块，用 **中英对照**。参数表上的类型/必填仍不抄。
+4. **原文** 没有的不要为完整而补。未知才标 **待确认**。
+
+「文档允许不完整」只针对未知缺口，不是可以丢掉原文里已经写清的口径。
 
 ## 只写事实
 
@@ -77,6 +90,7 @@ Apifox 的接口说明、参数说明、响应说明同一套三块，不要另�
 ## 禁止
 
 - 造词；为避免重复而换同义词；用 **泛化词** 包装具体业务（机制、体系、能力、链路、闭环、模型、引擎）。项目里已经这么叫的，照写
+- **覆盖式缩写**：有原文却整篇换成笼统三块
 - **过程句**：把实现翻译成中文长段
 - 表名、SQL、落库、队列、类名、内部函数。合同里的 **代码标识**（接口名、字段名、枚举值）可以写
 - 同一含义两个字段名并列当主说明
@@ -99,5 +113,6 @@ Apifox 的接口说明、参数说明、响应说明同一套三块，不要另�
 - 有没有该成对却只写了英文、或为成对造了新中文？
 - 有没有把 **参数表** 抄进传参？
 - 有 **易混接口** 却没写 **职责边界**？没有对照对象却空写了「本接口不做」？
+- 有 **原文** 时有没有 **覆盖式缩写**？**加权标记** 的判断口径还在不在？清晰句有没有被改糊，糊句有没有该优化却没动？
 - 该 **状态分列** 的却挤成一句，或不该分列却条条「工单处于」？
 - 有没有报告腔、换词、金句、一句话里多条规则、为完整而补上的内容？
