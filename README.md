@@ -1,4 +1,4 @@
-# api-docs
+# api-with-docs
 
 **中文** | [English](README.en.md)
 
@@ -8,7 +8,7 @@
 
 本 skill **依赖** `grill-with-docs`（请先安装同名 skill）来对齐 **业务术语** 并维护项目 `CONTEXT.md`。
 
-没有 grill-with-docs 时：没有稳定词表，模型仍会造词、把代码译成中文、补「因为」。效果会大打折扣。先装并会用 grill，再跑 `/api-docs`。
+没有 grill-with-docs 时：没有稳定词表，模型仍会造词、把代码译成中文、补「因为」。效果会大打折扣。先装并会用 grill，再跑 `/api-with-docs`。
 
 ## 做什么
 

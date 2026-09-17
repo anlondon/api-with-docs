@@ -1,4 +1,4 @@
-# api-docs
+# api-with-docs
 
 [中文](README.md) | **English**
 
@@ -8,7 +8,7 @@ Writes client-facing API docs, field notes, and Apifox descriptions. It does not
 
 This skill **depends on** `grill-with-docs` (install that skill first) to align **domain terms** and keep the project `CONTEXT.md`.
 
-Without grill-with-docs there is no stable glossary. The model will still coin names, narrate code as “business”, and invent “because”. Results drop sharply. Install and use grill first, then `/api-docs`.
+Without grill-with-docs there is no stable glossary. The model will still coin names, narrate code as “business”, and invent “because”. Results drop sharply. Install and use grill first, then `/api-with-docs`.
 
 ## What it does
 

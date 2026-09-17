@@ -1,5 +1,5 @@
 ---
-name: api-docs
+name: api-with-docs
 description: >-
   Writes client-facing API docs and Apifox descriptions in 使用方法 / 传参方法 / 注意事项,
   using existing project terms or 代码标识+待确认, never coined names. When updating existing
